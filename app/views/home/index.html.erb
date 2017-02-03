@@ -1,0 +1,67 @@
+<div class="row">
+
+  <!-- Blog Entries Column -->
+  <div class="col-md-8">
+
+    <h1 class="page-header">
+      Feed
+      <small>Tweets recentes</small>
+      <%= link_to "Postar tweet", new_tweet_path, class: "btn btn-primary" %>
+    </h1>
+
+    <%= render @tweets %>
+
+    <!-- Pager -->
+    <div class="digg_pagination">
+      <%= will_paginate @tweets %>
+    </div>
+
+  </div>
+
+
+  <!-- Blog Sidebar Widgets Column -->
+  <div class="col-md-4">
+
+    <!-- Blog Categories Well -->
+    <div class="well">
+
+      <%= image_tag current_usuario.foto.url(:medium), class: "img-responsive center-block" %>
+      <h4><%= current_usuario.nome %></h4>
+      <h5><%= current_usuario.email %></h5>
+      <h5><%= current_usuario.tweets.count %> Tweets</h5>
+
+      <div class="row">
+        <div class="col-lg-6">
+          <ul class="list-unstyled">
+            <li><%= link_to "Seguindo #{current_usuario.seguindo.count}".html_safe, seguindo_usuario_path(current_usuario) %></a>
+            </li>
+          </ul>
+        </div>
+        <!-- /.col-lg-6 -->
+        <div class="col-lg-6">
+          <ul class="list-unstyled">
+            <li><%= link_to "Seguidores #{current_usuario.seguidores.count}".html_safe, seguidores_usuario_path(current_usuario) %></a>
+            </li>
+          </ul>
+        </div>
+        <!-- /.col-lg-6 -->
+
+      </div>
+      <!-- /.row -->
+    </div>
+
+    <!-- Side Widget Well -->
+    <div class="well">
+      <h4>Descrição</h4>
+
+      <p><%= current_usuario.descricao %></p>
+    </div>
+
+  </div>
+
+
+
+</div>
+<!-- /.row -->
+
+

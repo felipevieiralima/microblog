@@ -1,0 +1,20 @@
+<div class="col-md-12">
+
+  <div class="col-md-2">
+    <%= image_tag tweet.usuario.foto.url(:thumb), class: "img-responsive img-circle center-block" %>
+  </div>
+
+  <div class="col-md-10">
+    <p><%= link_to tweet.usuario.nome, usuario_path(tweet.usuario), class: "" %>
+      - <%= tweet.usuario.email %> </p>
+
+    <p><span class="glyphicon glyphicon-time"></span> Postado em <%= tweet.created_at.to_s(:postado) %></p>
+
+    <p class="strong tweet"><%= tweet.content %></p>
+  </div>
+
+</div>
+
+<div class="col-md-12">
+  <hr>
+</div>

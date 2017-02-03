@@ -1,0 +1,23 @@
+<div class="container">
+
+  <%= form_tag usuarios_path, :method => :get, class: 'form-horizontal' do %>
+      <h2 class="">Encontrando Usuários</h2>
+      <input type="text" class="form-control" placeholder="Ex: joão" name="keywords">
+      <br>
+      <%= submit_tag "Procurar", :class => 'btn btn-primary btn-block' %>
+      <br>
+  <% end %>
+
+  <section class="series">
+
+    <% if @usuarios.present? %>
+
+        <%= render @usuarios %>
+
+    <% else %>
+        <h4>Não foram encontrados usuários.</h4>
+    <% end %>
+
+  </section>
+
+</div>

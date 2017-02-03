@@ -1,0 +1,4 @@
+<%= form_for(current_usuario.relacionamentos_ativos.build) do |f| %>
+    <div><%= hidden_field_tag :seguidor_id, @usuario.id %></div>
+    <%= f.submit "Seguir", class: "btn btn-primary btn-block" %>
+<% end %>

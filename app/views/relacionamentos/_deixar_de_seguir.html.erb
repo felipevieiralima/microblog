@@ -1,0 +1,6 @@
+<%= form_for(current_usuario.relacionamentos_ativos.find_by(seguido_id: @usuario.id),
+             html: { method: :delete }) do |f| %>
+    <%= f.submit "Deixar de seguir", class: "btn btn-default btn-block" %>
+<% end %>
+
+

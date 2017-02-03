@@ -1,0 +1,26 @@
+<div class="col-md-3">
+
+  <div class="well">
+    <p><%= image_tag @usuario.foto.url(:medium), class: "img-responsive  center-block" %></p>
+
+    <p><%= link_to "#{@usuario.nome }", usuario_path(@usuario) %></p>
+
+    <p><%= @usuario.email %></p>
+
+    <p><%= @usuario.tweets.count %> Tweets</p>
+
+    <p><%= link_to "Seguindo #{@usuario.seguindo.count}".html_safe, seguindo_usuario_path(@usuario) %></p>
+
+    <p><%= link_to "Seguidores #{@usuario.seguidores.count}".html_safe, seguidores_usuario_path(@usuario) %></p>
+
+  </div>
+
+  <div class="well">
+    <h4>Descrição</h4>
+
+    <p><%= @usuario.descricao %></p>
+  </div>
+
+
+</div>
+
